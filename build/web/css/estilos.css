@@ -1,0 +1,47 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 3 nov 2026, 13:24:51
+    Author     : william.marin
+*/
+
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    text-align: center;
+}
+
+.juego {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+}
+
+.dibujo {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #ccc;
+}
+
+.palabra {
+    margin: 35px 0;
+}
+
+.errores {
+    font-weight: bold;
+}
+
+.teclado {
+    margin-top: 30px;
+}
