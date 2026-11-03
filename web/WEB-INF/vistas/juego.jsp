@@ -37,7 +37,8 @@
                 </div>
 
                 <div class="palabra">
-                    <p>Cargar la palabra</p>
+                    <p>Palabras cargadas: ${totalPalabras}</p>
+                    <p>Palabra aleatoria: ${palabraPrueba}</p>
                 </div>
 
                 <p class="errores">Errores: 0 / 6</p>
