@@ -37,11 +37,16 @@
                 </div>
 
                 <div class="palabra">
-                    <p>Palabras cargadas: ${totalPalabras}</p>
-                    <p>Palabra aleatoria: ${palabraPrueba}</p>
+                    <p>Palabras disponibles: ${totalPalabras}</p>
+
+                    <p class="palabra-oculta">
+                        ${sessionScope.partida.palabraOculta}
+                    </p>
                 </div>
 
-                <p class="errores">Errores: 0 / 6</p>
+                <p class="errores">
+                    Errores: ${sessionScope.partida.errores} / 6
+                </p>
 
                 <section class="teclado">
                     <h2>Elige una letra</h2>

@@ -45,3 +45,10 @@ body {
 .teclado {
     margin-top: 30px;
 }
+
+.palabra-oculta {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    white-space: pre-wrap;
+}

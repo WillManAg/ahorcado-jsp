@@ -9,5 +9,33 @@ package modelo;
  * @author william.marin
  */
 public class Partida {
-    
+
+    private final String palabra;
+    private int errores;
+
+    public Partida(String palabra) {
+
+        this.palabra = palabra;
+        this.errores = 0;
+    }
+
+    public String getPalabraOculta() {
+
+        StringBuilder oculta = new StringBuilder();
+
+        for (int i = 0; i < palabra.length(); i++) {
+
+            if (i > 0) {
+                oculta.append(" ");
+            }
+
+            oculta.append("_");
+        }
+
+        return oculta.toString();
+    }
+
+    public int getErrores() {
+        return errores;
+    }
 }

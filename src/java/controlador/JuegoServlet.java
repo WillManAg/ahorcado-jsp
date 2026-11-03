@@ -8,7 +8,6 @@ package controlador;
  *
  * @author william.marin
  */
-
 import java.io.IOException;
 import java.io.InputStream;
 import javax.servlet.ServletException;
@@ -16,6 +15,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import modelo.Partida;
 
 import modelo.Diccionario;
 
@@ -48,18 +49,28 @@ public class JuegoServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request,
-                         HttpServletResponse response)
+            HttpServletResponse response)
             throws ServletException, IOException {
 
-        String palabra = diccionario.elegirPalabra();
+        HttpSession sesion = request.getSession();
+
+        Partida partida = (Partida) sesion.getAttribute("partida");
+
+        if (partida == null) {
+
+            String palabra = diccionario.elegirPalabra();
+
+            partida = new Partida(palabra);
+
+            sesion.setAttribute("partida", partida);
+        }
 
         request.setAttribute(
                 "totalPalabras", diccionario.getNumeroPalabras()
         );
 
-        request.setAttribute("palabraPrueba", palabra);
-
         request.getRequestDispatcher("/WEB-INF/vistas/juego.jsp")
                 .forward(request, response);
     }
+
 }
