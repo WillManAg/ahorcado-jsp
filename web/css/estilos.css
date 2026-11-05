@@ -52,3 +52,85 @@ body {
     letter-spacing: 3px;
     white-space: pre-wrap;
 }
+
+.dibujo svg {
+    width: 190px;
+    height: 195px;
+    fill: none;
+    stroke: #222;
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+.parte {
+    opacity: 0;
+}
+
+.parte.visible {
+    opacity: 1;
+}
+
+.letras {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.tecla {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tecla:hover {
+    background: #e8efff;
+    border-color: #7496ee;
+}
+
+.tecla:disabled {
+    background: #eee;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.resultado {
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.ganado {
+    background: #e4f7e8;
+    color: #267942;
+}
+
+.perdido {
+    background: #ffe5e5;
+    color: #a32828;
+}
+
+.nueva-partida {
+    margin-top: 30px;
+}
+
+.nueva-partida button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.nueva-partida button:hover {
+    background: #444;
+}
+

@@ -73,4 +73,50 @@ public class JuegoServlet extends HttpServlet {
                 .forward(request, response);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest request,
+            HttpServletResponse response)
+            throws ServletException, IOException {
+
+        request.setCharacterEncoding("UTF-8");
+
+        HttpSession sesion = request.getSession();
+
+        String accion = request.getParameter("accion");
+
+        if ("nueva".equals(accion)) {
+
+            Partida nuevaPartida = new Partida(
+                    diccionario.elegirPalabra()
+            );
+
+            sesion.setAttribute("partida", nuevaPartida);
+
+        } else {
+
+            Partida partida = (Partida) sesion.getAttribute("partida");
+
+            String valor = request.getParameter("letra");
+
+            if (partida != null && valor != null
+                    && valor.length() == 1) {
+
+                char letra = Character.toUpperCase(
+                        valor.charAt(0)
+                );
+
+                String alfabeto = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+
+                if (alfabeto.indexOf(letra) >= 0) {
+
+                    partida.probarLetra(letra);
+                }
+            }
+        }
+
+        response.sendRedirect(
+                request.getContextPath() + "/jugar"
+        );
+    }
+
 }
